@@ -1,6 +1,6 @@
 services:
   verdaccio:
-    image: verdaccio/verdaccio:nightly-master
+    image: verdaccio/verdaccio
     container_name: bit-ocean-verdaccio
     ports:
       - '4873:4873'
