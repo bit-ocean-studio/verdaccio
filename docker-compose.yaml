@@ -8,7 +8,7 @@ services:
       - './storage:/verdaccio/storage'
       - './conf:/verdaccio/conf'
     env:
-      VERDACCIO_PUBLIC_URL: 'https://npm/bit-ocean.studio/'
+      VERDACCIO_PUBLIC_URL: 'https://npm/bit-ocean.studio'
 volumes:
   verdaccio:
     driver: local
