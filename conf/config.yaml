@@ -14,7 +14,7 @@ web:
   enabled: true
   title: Bit Ocean npm Registry
   logo: https://avatars.githubusercontent.com/u/138547086?s=200&v=4
-  favicon: https://avatars.githubusercontent.com/u/138547086?s=200&v=4
+  favicon: ../assets/favicon.ico
   primary_color: '#0078d7'
   pkgManagers:
     - npm
