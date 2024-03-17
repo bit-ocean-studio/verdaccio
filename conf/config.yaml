@@ -16,6 +16,9 @@ security:
     sign:
       expiresIn: 7d
 
+https:
+  enabled: true
+
 uplinks:
   npmjs:
     url: https://registry.npmjs.org/
