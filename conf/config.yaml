@@ -12,12 +12,8 @@ security:
         expiresIn: 60d
         notBefore: 1
   web:
-    base: https://npm.bit-ocean.studio/
     sign:
       expiresIn: 7d
-
-https:
-  enabled: true
 
 uplinks:
   npmjs:
