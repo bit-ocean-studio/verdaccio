@@ -3,7 +3,7 @@ storage: /verdaccio/storage
 auth:
   htpasswd:
     file: /verdaccio/conf/htpasswd
-    algorithm: bcrypt # by default is crypt, but is recommended use bcrypt for new installations
+    algorithm: bcrypt
     # max_users: 1000
 security:
   api:
@@ -16,37 +16,32 @@ security:
       expiresIn: 7d
 
 uplinks:
-  npmjs:
+  npm:
     url: https://registry.npmjs.org/
 
 packages:
   '@bit-ocean/*':
     access: $all
     publish: $all
+    unpublish: $all
 
   '@*/*':
-    # scoped packages
     access: $all
     publish: $all
-    proxy: npmjs
+    unpublish: $all
+    proxy: npm
 
   '**':
-    # allow all users (including non-authenticated users) to read and
-    # publish all packages
-    #
-    # you can specify usernames/groupnames (depending on your auth plugin)
-    # and three keywords: "$all", "$anonymous", "$authenticated"
     access: $all
-
-    # allow all known users to publish packages
-    # (anyone can register by default, remember?)
     publish: $all
-    proxy: npmjs
+    unpublish: $all
+    proxy: npm
 
 middlewares:
   audit:
     enabled: true
 
 log:
-  - { type: stdout, format: pretty, level: trace }
-  # - {type: file, path: verdaccio.log, level: info}
+  type: stdout
+  format: pretty
+  level: warn
