@@ -1,5 +1,4 @@
 storage: /verdaccio/storage
-
 auth:
   htpasswd:
     file: /verdaccio/conf/htpasswd
@@ -11,46 +10,42 @@ security:
       sign:
         expiresIn: 60d
         notBefore: 1
-  web:
-    enabled: true
-    title: Bit Ocean npm Registry
-    logo: https://avatars.githubusercontent.com/u/138547086?s=200&v=4
-    favicon: https://avatars.githubusercontent.com/u/138547086?s=200&v=4
-    primary_color: '#0078d7'
-    pkgManagers:
-      - npm
-      - yarn
-      - pnpm
-    gravatar: true
-    sign:
-      expiresIn: 7d
-
+web:
+  enabled: true
+  title: Bit Ocean npm Registry
+  logo: https://avatars.githubusercontent.com/u/138547086?s=200&v=4
+  favicon: https://avatars.githubusercontent.com/u/138547086?s=200&v=4
+  primary_color: '#0078d7'
+  pkgManagers:
+    - npm
+    - yarn
+    - pnpm
+  gravatar: true
+  sign:
+    expiresIn: 7d
+i18n:
+  web: zh-CN
 uplinks:
   npm:
     url: https://registry.npmjs.org/
-
 packages:
   '@bit-ocean/*':
     access: $all
     publish: $all
     unpublish: $all
-
   '@*/*':
     access: $all
     publish: $all
     unpublish: $all
     proxy: npm
-
   '**':
     access: $all
     publish: $all
     unpublish: $all
     proxy: npm
-
 middlewares:
   audit:
     enabled: true
-
 log:
   type: stdout
   format: pretty
